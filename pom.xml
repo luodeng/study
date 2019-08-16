@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.roden.study</groupId>
+    <artifactId>parent</artifactId>
+    <version>${revision}</version>
+
+    <packaging>pom</packaging>
+    <name>Parent-Project-Build</name>
+    <description>parent project</description>
+    <properties>
+        <revision>1.0-SNAPSHOT</revision>
+        <main.basedir>${basedir}</main.basedir>
+
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <app.encoding>UTF-8</app.encoding>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.build.timestamp.format>yyyy-MM-dd.HH:mm:ss</maven.build.timestamp.format>
+    </properties>
+
+    <modules>
+        <module>rabbitmq</module>
+        <module>elasticsearch</module>
+    </modules>
+</project>
