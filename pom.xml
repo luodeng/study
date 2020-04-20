@@ -27,5 +27,6 @@
     <modules>
         <module>rabbitmq</module>
         <module>elasticsearch</module>
+        <module>redis</module>
     </modules>
 </project>

@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: spirng-boot-redis
+  redis:
+    host: redis.roden.com
+    port: 6379
+    password:
+
