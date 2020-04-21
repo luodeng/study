@@ -1,5 +1,6 @@
 package com.roden.study.redis.redisson;
 
+import org.junit.Test;
 import org.redisson.Redisson;
 import org.redisson.RedissonRedLock;
 import org.redisson.api.RLock;
@@ -9,7 +10,8 @@ import org.redisson.config.Config;
 import java.util.concurrent.TimeUnit;
 
 public class RedissonTest {
-    public static void main(String[] args) {
+    @Test
+    public void test1() {
         Config config1 = new Config();
         config1.useSingleServer().setAddress("redis1.roden.com:6379").setPassword(null).setDatabase(0);
         RedissonClient redissonClient1 = Redisson.create(config1);
