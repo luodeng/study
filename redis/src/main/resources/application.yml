@@ -2,7 +2,11 @@ spring:
   application:
     name: spirng-boot-redis
   redis:
+    database: 0
     host: redis.roden.com
     port: 6379
-    password:
+    # password:
+    # 连接超时时间
+    timeout: 10000
+
 
