@@ -8,5 +8,7 @@ spring:
     # password:
     # 连接超时时间
     timeout: 10000
+testValue: test
+
 
 
