@@ -28,5 +28,6 @@
         <module>rabbitmq</module>
         <module>elasticsearch</module>
         <module>redis</module>
+        <module>springboot</module>
     </modules>
 </project>
