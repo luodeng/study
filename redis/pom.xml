@@ -59,7 +59,6 @@
             <resource>
                 <directory>src/main/resources</directory>
                 <excludes>
-                    <exclude>*.properties</exclude>
                     <exclude>*.yml</exclude>
                     <exclude>*.xml</exclude>
                 </excludes>
