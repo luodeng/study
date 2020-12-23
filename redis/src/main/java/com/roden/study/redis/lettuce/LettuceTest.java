@@ -4,6 +4,7 @@ import com.roden.study.redis.util.ProPertiesUtils;
 import io.lettuce.core.ReadFrom;
 import io.lettuce.core.RedisClient;
 import io.lettuce.core.RedisURI;
+import io.lettuce.core.SetArgs;
 import io.lettuce.core.api.StatefulRedisConnection;
 import io.lettuce.core.api.sync.RedisCommands;
 import io.lettuce.core.cluster.RedisClusterClient;
@@ -16,6 +17,7 @@ import io.lettuce.core.resource.DirContextDnsResolver;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
 
@@ -37,12 +39,21 @@ public class LettuceTest {
     public void connectToRedis () {
         //Syntax: redis://[password@]host[:port][/databaseNumber]
         //RedisClient redisClient = RedisClient.create("redis://password@localhost:6379/0");
+        //RedisClient redisClient = RedisClient.create("redis://10.10.1.55:6379/0");
 
-        RedisClient redisClient=RedisClient.create(RedisURI.create(host,port));
+        RedisURI redisURI=null;
+        //redisURI=RedisURI.create("redis://10.10.1.55/");
+        //redisURI=RedisURI.Builder.redis("10.10.1.55",6379).build();
+        //redisURI=new RedisURI("10.10.1.55", 6379, 60, TimeUnit.SECONDS);
+        redisURI=new RedisURI(host,port, Duration.ofSeconds(60));
+
+        RedisClient redisClient=RedisClient.create(redisURI);
         StatefulRedisConnection<String, String> connection = redisClient.connect();
         RedisCommands<String, String> syncCommands = connection.sync();
         syncCommands.set("key", "Hello, Redis!");
         System.out.println(syncCommands.get("key"));
+        System.out.println(syncCommands.del("key"));
+        System.out.println(syncCommands.set("key","value2", SetArgs.Builder.xx().px(200)));
         connection.close();
         redisClient.shutdown();
     }

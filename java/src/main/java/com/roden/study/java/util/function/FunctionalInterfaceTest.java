@@ -1,4 +1,4 @@
-package jdk.util.function;
+package com.roden.study.java.util.function;
 
 import org.junit.Test;
 

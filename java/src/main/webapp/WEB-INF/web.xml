@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+        http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>Archetype Created Web Application</display-name>
+
+	<servlet>
+		<servlet-name>json</servlet-name>
+		<servlet-class>com.roden.study.java.web.servlet.JsonServlet</servlet-class>
+		<init-param>
+			<param-name>encode</param-name>
+			<param-value>utf-8</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>json</servlet-name>
+		<url-pattern>/servlet/json</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>ServletDemo1</servlet-name>
+		<servlet-class>com.roden.study.java.web.servlet.ServletDemo1</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletDemo1</servlet-name>
+		<url-pattern>/servlet/ServletDemo1</url-pattern>
+	</servlet-mapping>
+    <!--配置过滤器-->
+    <filter>
+        <filter-name>FilterDemo01</filter-name>
+        <filter-class>com.roden.study.java.web.filter.FilterDemo01</filter-class>
+    </filter>
+    <!--映射过滤器-->
+    <filter-mapping>
+        <filter-name>FilterDemo01</filter-name>
+        <!--“/*”表示拦截所有的请求 -->
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    <!-- 注册针对ServletContext对象进行监听的监听器 -->
+    <listener>
+        <description>ServletContextListener监听器</description>
+        <!--实现了ServletContextListener接口的监听器类 -->
+        <listener-class>com.roden.study.java.web.listener.MyServletContextListener</listener-class>
+    </listener>
+    <!--注册针对HttpSession对象进行监听的监听器-->
+    <listener>
+        <description>HttpSessionListener监听器</description>
+        <listener-class>com.roden.study.java.web.listener.MyHttpSessionListener</listener-class>
+    </listener>
+    <!--注册针对ServletRequest对象进行监听的监听器-->
+    <listener>
+        <description>ServletRequestListener监听器</description>
+        <listener-class>com.roden.study.java.web.listener.MyServletRequestListener</listener-class>
+    </listener>
+    <!-- 配置HttpSession对象的销毁时机 -->
+    <session-config>
+        <!--配置HttpSession对象的1分钟之后销毁 -->
+        <session-timeout>1</session-timeout>
+    </session-config>
+</web-app>

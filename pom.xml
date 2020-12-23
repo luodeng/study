@@ -29,5 +29,7 @@
         <module>elasticsearch</module>
         <module>redis</module>
         <module>springboot</module>
+        <module>examples</module>
+        <module>java</module>
     </modules>
 </project>
