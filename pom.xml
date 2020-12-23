@@ -31,5 +31,6 @@
         <module>springboot</module>
         <module>examples</module>
         <module>java</module>
+        <module>spring</module>
     </modules>
 </project>
