@@ -9,10 +9,10 @@ package com.roden.study.java.designpatterns.creational.singleton;
     缺点：类加载时就初始化，浪费内存。
     它基于 classloder 机制避免了多线程的同步问题，不过，instance 在类装载时就实例化，虽然导致类装载的原因有很多种，在单例模式中大多数都是调用 getInstance 方法， 但是也不能确定有其他的方式（或者其他的静态方法）导致类装载，这时候初始化 instance 显然没有达到 lazy loading 的效果。
  */
-public class SingletonThree {
-    private static SingletonThree instance = new SingletonThree();
-    private SingletonThree (){}
-    public static SingletonThree getInstance() {
+public class SingletonThreeToHungryMan {
+    private static SingletonThreeToHungryMan instance = new SingletonThreeToHungryMan();
+    private SingletonThreeToHungryMan(){}
+    public static SingletonThreeToHungryMan getInstance() {
     return instance;  
     }  
 }  
