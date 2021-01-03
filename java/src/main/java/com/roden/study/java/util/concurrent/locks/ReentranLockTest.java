@@ -1,9 +1,8 @@
 package com.roden.study.java.util.concurrent.locks;
 
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReadWriteLock;
-import java.util.concurrent.locks.ReentrantLock;
-import java.util.concurrent.locks.ReentrantReadWriteLock;
+import org.junit.Test;
+
+import java.util.concurrent.locks.*;
 
 /**
  * 独占锁
@@ -19,5 +18,24 @@ public class ReentranLockTest {
         Lock lock=new ReentrantLock(true);
         //ReadLock  WriteLock
         ReadWriteLock readWriteLock=new ReentrantReadWriteLock(true);
+    }
+    @Test
+    public void t3(){
+        int value=1;
+        Lock lock=new ReentrantLock();
+        Condition condition_1=lock.newCondition();
+        Condition condition_2=lock.newCondition();
+        Condition condition_3=lock.newCondition();
+        lock.lock();
+        try {
+            while (value==1){
+                condition_1.wait();
+            }
+            condition_2.signal();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            lock.unlock();
+        }
     }
 }
