@@ -1,4 +1,4 @@
-package com.roden.study.java.web.servlet;
+package com.roden.study.javax.servlet.servlet;
 
 import org.apache.commons.codec.binary.Base64;
 

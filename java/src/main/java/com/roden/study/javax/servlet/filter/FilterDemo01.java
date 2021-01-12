@@ -1,4 +1,4 @@
-package com.roden.study.java.web.filter;
+package com.roden.study.javax.servlet.filter;
 
 import java.io.IOException;
 

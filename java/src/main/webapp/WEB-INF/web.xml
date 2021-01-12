@@ -8,7 +8,7 @@
 
 	<servlet>
 		<servlet-name>json</servlet-name>
-		<servlet-class>com.roden.study.java.web.servlet.JsonServlet</servlet-class>
+		<servlet-class>com.roden.study.javax.servlet.servlet.JsonServlet</servlet-class>
 		<init-param>
 			<param-name>encode</param-name>
 			<param-value>utf-8</param-value>
@@ -21,7 +21,7 @@
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>ServletDemo1</servlet-name>
-		<servlet-class>com.roden.study.java.web.servlet.ServletDemo1</servlet-class>
+		<servlet-class>com.roden.study.javax.servlet.servlet.ServletDemo1</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>ServletDemo1</servlet-name>
@@ -30,7 +30,7 @@
     <!--配置过滤器-->
     <filter>
         <filter-name>FilterDemo01</filter-name>
-        <filter-class>com.roden.study.java.web.filter.FilterDemo01</filter-class>
+        <filter-class>com.roden.study.javax.servlet.filter.FilterDemo01</filter-class>
     </filter>
     <!--映射过滤器-->
     <filter-mapping>
@@ -42,17 +42,17 @@
     <listener>
         <description>ServletContextListener监听器</description>
         <!--实现了ServletContextListener接口的监听器类 -->
-        <listener-class>com.roden.study.java.web.listener.MyServletContextListener</listener-class>
+        <listener-class>com.roden.study.javax.servlet.listener.MyServletContextListener</listener-class>
     </listener>
     <!--注册针对HttpSession对象进行监听的监听器-->
     <listener>
         <description>HttpSessionListener监听器</description>
-        <listener-class>com.roden.study.java.web.listener.MyHttpSessionListener</listener-class>
+        <listener-class>com.roden.study.javax.servlet.listener.MyHttpSessionListener</listener-class>
     </listener>
     <!--注册针对ServletRequest对象进行监听的监听器-->
     <listener>
         <description>ServletRequestListener监听器</description>
-        <listener-class>com.roden.study.java.web.listener.MyServletRequestListener</listener-class>
+        <listener-class>com.roden.study.javax.servlet.listener.MyServletRequestListener</listener-class>
     </listener>
     <!-- 配置HttpSession对象的销毁时机 -->
     <session-config>

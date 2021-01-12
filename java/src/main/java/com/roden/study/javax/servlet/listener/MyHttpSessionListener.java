@@ -1,4 +1,4 @@
-package com.roden.study.java.web.listener;
+package com.roden.study.javax.servlet.listener;
 
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;

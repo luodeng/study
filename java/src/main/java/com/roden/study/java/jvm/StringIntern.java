@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
+ *  可使用 Java VisualVM监控jvm
+
  *  设置最小堆内存和最大堆内存, 一样即不可扩展。
  *  关闭GC占用时间过长时会报的异常，否则还没报堆溢出会先报GC错误
  *  -Xmx5m -Xms5m -XX:-UseGCOverheadLimit
