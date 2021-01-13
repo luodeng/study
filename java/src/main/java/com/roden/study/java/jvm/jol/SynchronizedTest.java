@@ -1,4 +1,4 @@
-package com.roden.study.java.util.concurrent;
+package com.roden.study.java.jvm.jol;
 
 import org.openjdk.jol.info.ClassLayout;
 
@@ -36,6 +36,10 @@ public class SynchronizedTest {
         this.value=8;
     }
 
+    /**
+     * 注意，由于hashcode在对象头中存储是小端模式，即:
+     *          数据的高字节保存在内存的高地址中，而数据的低字节保存在内存的低地址中
+     */
     @org.junit.Test
     public void makeWord(){
         Object object = new Object();
