@@ -1,5 +1,5 @@
-package com.roden.study.java.util;
-public class Md5Base{
+package com.roden.study.algorithm;
+public class Md5Base {
     /*
     *四个链接变量
     */
@@ -153,7 +153,7 @@ public class Md5Base{
     private Md5Base(){};
      
     public static void main(String[] args){
-        String str=Md5Base.getInstance().getMD5("123456");
+        String str= Md5Base.getInstance().getMD5("123456");
         System.out.println(str);
     }
 }

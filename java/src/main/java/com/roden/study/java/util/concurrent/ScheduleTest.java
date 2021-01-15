@@ -2,6 +2,8 @@ package com.roden.study.java.util.concurrent;
 
 import org.junit.Test;
 
+import java.time.LocalTime;
+import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.concurrent.Executors;
@@ -35,4 +37,17 @@ public class ScheduleTest {
                                       },
                initialDelay, onedayTimeMillis, TimeUnit.MILLISECONDS);
    }
+
+    /**
+     * 每天0点修改昨天待还款订单修改为逾期
+     */
+    public void startScheduleMakeLoanOverdue() {
+        ScheduledExecutorService scheduledExecutorService= Executors.newSingleThreadScheduledExecutor();
+        LocalTime localTime = LocalTime.of(0, 5);
+        long time = ChronoUnit.MINUTES.between(LocalTime.now(), localTime);
+        long initialDelay = time > 0 ? time : 24 * 60 + time;
+        System.out.println("startScheduleMakeLoanOverdue start after minutes " + initialDelay);
+        scheduledExecutorService.scheduleAtFixedRate(() -> {}, initialDelay, 24 * 60, TimeUnit.MINUTES);
+
+    }
 }

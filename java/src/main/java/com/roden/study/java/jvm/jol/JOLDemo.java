@@ -28,6 +28,12 @@ public class JOLDemo {
         System.out.println(ClassLayout.parseInstance(a).toPrintable());;
     }
 
+    /**
+     * Unsafe类存在于sun.misc包中，其内部方法操作可以像C的指针一样直接操作内存
+     * @param object
+     * @throws NoSuchFieldException
+     * @throws IllegalAccessException
+     */
     public static void calcHash(Object object) throws NoSuchFieldException, IllegalAccessException {
         // 手动计算HashCode
         Field field = Unsafe.class.getDeclaredField("theUnsafe");
