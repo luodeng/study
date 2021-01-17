@@ -23,7 +23,7 @@ public class AtomicReferenceTest {
     }
     /**
      * 原子更新对象
-     * 解决ABA问题
+     * 会有ABA问题
      */
     @Test
     public void object2() throws InterruptedException {
@@ -59,7 +59,7 @@ public class AtomicReferenceTest {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            atomicStampedReference.compareAndSet(100,101,stmp,stmp+1);
+            System.out.println(atomicStampedReference.compareAndSet(100, 101, stmp, stmp + 1));
             System.out.println(atomicStampedReference.getReference()+"\t"+atomicStampedReference.getStamp());
 
         },"线程1").start();
@@ -71,7 +71,7 @@ public class AtomicReferenceTest {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            atomicStampedReference.compareAndSet(100,101,stmp,stmp+1);
+            System.out.println(atomicStampedReference.compareAndSet(100,101,stmp,stmp+1));
             System.out.println(atomicStampedReference.getReference()+"\t"+atomicStampedReference.getStamp());
         }, "线程2").start();
         Thread.sleep(5000);

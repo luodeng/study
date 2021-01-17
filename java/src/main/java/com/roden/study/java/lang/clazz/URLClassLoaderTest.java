@@ -12,7 +12,7 @@ public class URLClassLoaderTest {
         //.jar  ftp http
         URL[] urls={new URL("file:Hello.class")};
         URLClassLoader ucl=new URLClassLoader(urls);
-        Object obj=ucl.loadClass("jdk.lang.clazz.Hello").newInstance();
+        Object obj=ucl.loadClass("com.roden.study.java.lang.clazz.Hello").newInstance();
         for(Method method:obj.getClass().getDeclaredMethods()){
             System.out.println(method.getName());
         }

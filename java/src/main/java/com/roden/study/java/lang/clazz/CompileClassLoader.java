@@ -108,7 +108,7 @@ public class CompileClassLoader extends ClassLoader
             System.out.println("缺少目标类，请按如下格式运行Java源文件：");
             System.out.println("java CompileClassLoader ClassName");
             args=new String[2];
-            args[0]="jdk.lang.clazz.Hello";
+            args[0]="com.roden.study.java.lang.clazz.Hello";
             args[1]="呵呵";
         }
         // 第一个参数是需要运行的类
