@@ -1,0 +1,4 @@
+!!org.yaml.snakeyaml.Customer
+firstName: "John"
+lastName: "Doe"
+age: 20
