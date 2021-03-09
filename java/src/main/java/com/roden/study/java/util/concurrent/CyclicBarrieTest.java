@@ -4,12 +4,13 @@ import org.junit.Test;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
+import java.util.stream.IntStream;
 
 public class CyclicBarrieTest {
     @Test
     public void test(){
         CyclicBarrier cyclicBarrie=new CyclicBarrier(7,()->System.out.println("end"));
-        for(int i=0;i<7;i++){
+        IntStream.range(1,8).forEach(i->{
             new Thread(()->{
                 System.out.println(Thread.currentThread().getName());
                 try {
@@ -20,6 +21,6 @@ public class CyclicBarrieTest {
                     e.printStackTrace();
                 }
             },String.valueOf(i)).start();
-        }
+        });
     }
 }

@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import java.util.concurrent.CountDownLatch;
 
-public class CountDownLatchTest {
+public class CountDownLatchDemo {
     @Test
     public void test() throws InterruptedException {
         CountDownLatch countDownLatch=new CountDownLatch(10);
@@ -17,6 +17,7 @@ public class CountDownLatchTest {
         }
         System.out.println(Thread.currentThread().getName()+"\t");
         countDownLatch.await();
+        //同步计数器、阻塞当前线程，直到计数器的值为0
         System.out.println(Thread.currentThread().getName()+"\t");
 
     }

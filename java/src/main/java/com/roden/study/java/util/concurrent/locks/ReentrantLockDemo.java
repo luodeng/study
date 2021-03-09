@@ -1,9 +1,28 @@
 package com.roden.study.java.util.concurrent.locks;
 
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
-public class AQSDemo {
+/**
+ * 独占锁
+ *
+ * 共享锁
+ *  读-共存
+ *  读写-不能共存
+ *  写-不能共存
+ */
+public class ReentrantLockDemo {
+    public void t2(){
+        //默认非公平 传true公平 fifo
+        Lock lock=new ReentrantLock(true);
+        //ReadLock  WriteLock
+        ReadWriteLock readWriteLock=new ReentrantReadWriteLock(true);
+    }
+
+
     public static void main(String[] args) {
         ReentrantLock lock = new ReentrantLock();
         //带入一个银行办理业务的案例来模拟我们的AQS如何进行线程的管理和通知唤醒机制
