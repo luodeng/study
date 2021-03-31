@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.roden.study</groupId>
-    <artifactId>parent</artifactId>
+    <artifactId>study-parent</artifactId>
     <version>${revision}</version>
 
     <packaging>pom</packaging>
@@ -32,5 +32,7 @@
         <module>examples</module>
         <module>java</module>
         <module>spring</module>
+        <module>netty</module>
+        <module>dubbo</module>
     </modules>
 </project>
