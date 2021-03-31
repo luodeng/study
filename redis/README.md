@@ -5,25 +5,31 @@ Redis （REmote DIctionary Server）
 ## 数据类型
 ### String 
 订单号 incr key
-``
+```
   SET key value [EX seconds] [PX milliseconds] [NX|XX]
   summary: Set the string value of a key
   since: 1.0.0
-``
+```
 ### Hash
 Map<String,Map<Object,Object>>
+
 购物车早期
+
     hset shopcar:uid 3333 1
     hincrby shopcar:uid 3333 1
 ### List
 微信文章订阅公众号
+
 lpush liketitle:id  公从号id 公从号id
 
 ### Set
 微信抽奖
 srndmember set 1 1
+
 spop set 1 
+
 朋友圈点赞 sadd pub:mesid 用户id 用户id
+
 微博好友 并集运算   共同关注 
 ### Zset
 热搜排序
