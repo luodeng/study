@@ -27,5 +27,11 @@
             <version>${dubbo.version}</version>
             <type>pom</type>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.curator/curator-x-discovery -->
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-x-discovery</artifactId>
+            <version>5.1.0</version>
+        </dependency>
     </dependencies>
 </project>
