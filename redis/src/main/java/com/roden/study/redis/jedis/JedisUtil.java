@@ -18,7 +18,7 @@ public class JedisUtil {
         // 连接其它db(0-15) select index
         //jedis.select(0);
         //查看服务是否运行
-        System.out.println(" jedis init ping:" + jedis.ping());
+        //System.out.println(" jedis init ping:" + jedis.ping());
         return jedis;
     }
 }
