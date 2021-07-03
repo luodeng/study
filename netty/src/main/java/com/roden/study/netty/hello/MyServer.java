@@ -8,7 +8,9 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
-
+/**
+ * 超详细Netty入门，看这篇就够了！ https://developer.aliyun.com/article/769587
+ */
 public class MyServer {
     public static void main(String[] args) throws Exception {
         //创建两个线程组 boosGroup、workerGroup

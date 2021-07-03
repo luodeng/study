@@ -10,6 +10,9 @@ import io.netty.handler.codec.http.HttpObjectAggregator;
 import io.netty.handler.codec.http.HttpRequestDecoder;
 import io.netty.handler.codec.http.HttpResponseEncoder;
 
+/**
+ * Netty入门教程——认识Netty  https://www.jianshu.com/p/b9f3f6a16911
+ */
 public class HttpServer {
 
     private final int port;
